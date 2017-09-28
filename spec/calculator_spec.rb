@@ -5,9 +5,17 @@ describe Calculator do
   let(:calculator){Calculator.new}
 
   describe '#initialize' do
-    it 'gives you a new calculator'
-    it 'has nothing in the memory'
-    it 'is not in string format'
+    it 'gives you a new calculator' do
+      expect(calculator).to be_a(Calculator)
+    end
+
+    it 'has nothing in the memory' do
+      expect(calculator.memory).to eq(nil)
+    end
+
+    it 'is not in string format' do
+      expect(calculator.instance_variable_get(:@stringify)).to eq(false)
+    end
   end
 
   describe '#add' do
