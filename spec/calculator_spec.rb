@@ -19,32 +19,50 @@ describe Calculator do
   end
 
   describe '#add' do
-    it 'takes only 2 arguments'
+    it 'raises an error with an incorrect number of arguments' do
+      expect{calculator.add(2)}.to raise_error(ArgumentError)
+    end
+
     it 'adds two numbers'
   end #add
 
   describe '#subtract' do
-    it 'takes only 2 arguments'
+    it 'raises an error with an incorrect number of arguments' do
+      expect{calculator.subtract(2)}.to raise_error(ArgumentError)
+    end
+
     it 'subtracts the second number from the first number'
   end #subtract
 
   describe '#multiply' do
-    it 'takes only 2 arguments'
+    it 'raises an error with an incorrect number of arguments' do
+      expect{calculator.multiply(2)}.to raise_error(ArgumentError)
+    end
+
     it 'multiplies two numbers'
   end #multiply
 
   describe '#divide' do
-    it 'takes only 2 arguments'
+    it 'raises an error with an incorrect number of arguments' do
+      expect{calculator.divide(2)}.to raise_error(ArgumentError)
+    end
+
+    it 'raises an error if the second number is 0'
     it 'divides the first number by the second number'
   end #divide
 
   describe '#pow' do
-    it 'takes only 2 arguments'
+    it 'raises an error with an incorrect number of arguments' do
+      expect{calculator.pow(2)}.to raise_error(ArgumentError)
+    end
+
     it 'raises the first number to the power of the second number'
   end #pow
 
   describe '#sqrt' do
-    it 'takes only 1 argument'
+    it 'raises an error with an incorrect number of arguments' do
+      expect{calculator.sqrt(2,1)}.to raise_error(ArgumentError)
+    end
     it 'returns the square route of the given number'
     it 'raises an error if the number is < 0'
   end #sqrt
@@ -55,7 +73,9 @@ describe Calculator do
   end #memory
 
   describe '#output' do
-    it 'takes only 1 argument'
+    it 'raises an error with an incorrect number of arguments' do
+      expect{calculator.output(2,3)}.to raise_error(ArgumentError)
+    end
     it 'outputs the response'
   end #output
 
