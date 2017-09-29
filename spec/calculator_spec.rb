@@ -49,8 +49,34 @@ describe Calculator do
       expect{calculator.subtract(2)}.to raise_error(ArgumentError)
     end
 
-    it 'subtracts the second number from the first number' do
-      expect(calculator.subtract(2,3)).to eq(-1)
+    context "when both numbers are integers" do
+      it 'subtracts the second integer from the first integer' do
+        expect(calculator.subtract(2,3)).to eq(-1)
+      end
+
+      it 'handles negative integers' do
+        expect(calculator.subtract(-2,3)).to eq(-5)
+      end
+    end
+
+    context "when both numbers are floats" do
+      it 'subtracts the second float from the first float' do
+        expect(calculator.subtract(2.5,3.5)).to eq(-1)
+      end
+
+      it 'handles negative floats' do
+        expect(calculator.subtract(-2.5,3.5)).to eq(-6)
+      end
+    end
+
+    context "when numbers are and integer and a float" do
+      it 'returns a float' do
+        expect(calculator.subtract(6,3.5)).to eq(2.5)
+      end
+
+      it 'handles negative floats' do
+        expect(calculator.subtract(-6,3.5)).to eq(-9.5)
+      end
     end
   end #subtract
 
