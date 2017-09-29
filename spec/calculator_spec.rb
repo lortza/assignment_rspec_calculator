@@ -56,8 +56,14 @@ describe Calculator do
       expect{calculator.divide(2)}.to raise_error(ArgumentError)
     end
 
-    it 'raises an error if the second number is 0'
-    it 'divides the first number by the second number'
+    it 'raises an error if the second number is 0' do
+      expect{calculator.divide(2,0)}.to raise_error(ArgumentError)
+    end
+
+    it 'divides the first number by the second number' do
+      expect(calculator.divide(10,2)).to eq(5)
+      expect(calculator.divide(1,8)).to eq(0.125)
+    end
   end #divide
 
   describe '#pow' do
