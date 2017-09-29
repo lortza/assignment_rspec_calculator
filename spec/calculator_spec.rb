@@ -71,27 +71,42 @@ describe Calculator do
       expect{calculator.pow(2)}.to raise_error(ArgumentError)
     end
 
-    it 'raises the first number to the power of the second number'
+    it 'raises the first number to the power of the second number' do
+      expect(calculator.pow(5,2)).to eq(25)
+    end
   end #pow
 
   describe '#sqrt' do
     it 'raises an error with an incorrect number of arguments' do
       expect{calculator.sqrt(2,1)}.to raise_error(ArgumentError)
     end
-    it 'returns the square route of the given number'
-    it 'raises an error if the number is < 0'
+
+    it 'returns the square route of the given number' do
+      expect(calculator.sqrt(25)).to eq(5)
+    end
+
+    it 'raises an error if the number is < 0' do
+      expect{calculator.sqrt(-1)}.to raise_error(ArgumentError)
+    end
   end #sqrt
 
   describe '#memory' do
     it 'returns the item in the memory'
-    it 'resets the memory to nil'
+
+    it 'resets the memory to nil' do
+      expect(calculator.memory).to eq(nil)
+    end
   end #memory
 
   describe '#output' do
     it 'raises an error with an incorrect number of arguments' do
       expect{calculator.output(2,3)}.to raise_error(ArgumentError)
     end
-    it 'outputs the response'
+
+    it 'outputs the response' do
+      input = (1 + 3)
+      expect(calculator.output(input)).to eq(4)
+    end
   end #output
 
 end #Calculator
