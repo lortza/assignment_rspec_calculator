@@ -23,11 +23,24 @@ describe Calculator do
       expect{calculator.add(2)}.to raise_error(ArgumentError)
     end
 
-    it 'adds two numbers' do
+    it 'adds two positive integers' do
       expect(calculator.add(2,3)).to eq(5)
+    end
+
+    it 'adds two positive floats' do
+      expect(calculator.add(2.5,3.5)).to eq(6)
+    end
+
+    it 'handles negative integers' do
       expect(calculator.add(-2,3)).to eq(1)
-      expect(calculator.add(2,-3)).to eq(-1)
-      expect(calculator.add(0,2)).to eq(2)
+    end
+
+    it 'handles negative floats' do
+      expect(calculator.add(-2.5,3.5)).to eq(1)
+    end
+
+    it 'returns a float when adding an integer and a float' do
+      expect(calculator.add(4,3.125)).to eq(7.125)
     end
   end #add
 
