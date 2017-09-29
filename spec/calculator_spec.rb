@@ -23,7 +23,12 @@ describe Calculator do
       expect{calculator.add(2)}.to raise_error(ArgumentError)
     end
 
-    it 'adds two numbers'
+    it 'adds two numbers' do
+      expect(calculator.add(2,3)).to eq(5)
+      expect(calculator.add(-2,3)).to eq(1)
+      expect(calculator.add(2,-3)).to eq(-1)
+      expect(calculator.add(0,2)).to eq(2)
+    end
   end #add
 
   describe '#subtract' do
