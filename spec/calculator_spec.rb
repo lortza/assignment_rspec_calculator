@@ -44,7 +44,9 @@ describe Calculator do
       expect{calculator.multiply(2)}.to raise_error(ArgumentError)
     end
 
-    it 'multiplies two numbers'
+    it 'multiplies two numbers' do
+      expect(calculator.multiply(2,3)).to eq(6)
+    end
   end #multiply
 
   describe '#divide' do
