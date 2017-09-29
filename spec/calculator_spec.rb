@@ -36,7 +36,9 @@ describe Calculator do
       expect{calculator.subtract(2)}.to raise_error(ArgumentError)
     end
 
-    it 'subtracts the second number from the first number'
+    it 'subtracts the second number from the first number' do
+      expect(calculator.subtract(2,3)).to eq(-1)
+    end
   end #subtract
 
   describe '#multiply' do
