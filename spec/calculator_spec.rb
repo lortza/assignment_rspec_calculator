@@ -130,7 +130,16 @@ describe Calculator do
   end #sqrt
 
   describe '#memory' do
-    it 'returns the item in the memory'
+    it 'returns the item in the memory' do
+      calculator.memory = 15
+      expect(calculator.memory).to eq(15)
+    end
+
+    it 'is rewritable' do
+      calculator.memory = 15
+      calculator.memory = 5
+      expect(calculator.memory).to eq(5)
+    end
 
     it 'resets the memory to nil' do
       expect(calculator.memory).to eq(nil)
